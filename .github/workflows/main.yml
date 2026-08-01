@@ -17,12 +17,6 @@ jobs:
           path: Library
           key: Library-AssetBundles
 
-      - name: Free Unity License Activation
-        uses: game-ci/unity-request-activation-file@v4
-        id: step1
-        with:
-          unityVersion: 2022.3.10f1
-
       - name: Run Unity Builder
         uses: game-ci/unity-builder@v4
         with:
@@ -30,9 +24,3 @@ jobs:
           unityVersion: 2022.3.10f1
           targetPlatform: StandaloneWindows64
           buildMethod: CreateAssetBundles.BuildAllAssetBundles
-
-      - name: Upload AssetBundles
-        uses: actions/upload-artifact@v4
-        with:
-          name: My-Asset-Bundles
-          path: Assets/AssetBundles/
